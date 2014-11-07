@@ -1,0 +1,20 @@
+{
+    "name":              "clearvox/asterisk-chansip",
+    "description":       "A Library to help with preparing configuration for ChanSIp in Asterisk 12/13",
+    "minimum-stability": "dev",
+    "license":           "MIT",
+    "authors":           [
+        {
+            "name":  "Leon Rowland",
+            "email": "leon@rowland.nl"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+             "Clearvox\\Asterisk\\ChanSIP": "src"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    }
+}
