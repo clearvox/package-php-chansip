@@ -136,6 +136,8 @@ class Peer
      */
     protected $nat;
 
+
+
     /**
      * @var string
      */
@@ -347,7 +349,9 @@ class Peer
     protected $sendRpid;
 
     const SEND_RPID_YES = 'yes';
-    const SEND_RPID_NO  = 'no';
+    const SEND_RPID_NO = 'no';
+    const SEND_RPID_RPID = 'rpid';
+    const SEND_RPID_PAI = 'pai';
 
     /**
      * @var string
@@ -2157,5 +2161,31 @@ class Peer
     public function getVmExten()
     {
         return $this->vmExten;
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        $string = '';
+
+        $differences = [
+            'sessionTimers' => 'session-timers',
+            'sessionExpires' => 'session-expires',
+        ];
+
+        foreach(get_object_vars($this) as $prop) {
+            if (arraY_key_exists($prop, $differences)) {
+                $string .= $differences[$prop] . '=' . $this->$prop;
+            } else {
+                $string .= strtolower($prop) . '=' . $this->$prop;
+            }
+        }
+    }
+
+    public function __toString()
+    {
+        return $this->toString();
     }
 }
