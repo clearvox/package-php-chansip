@@ -2169,7 +2169,6 @@ class Peer
     public function toString()
     {
         $string = '';
-// TODO: ADD IGNORE ARRAY
         
         $ignore = [
             'id',
@@ -2187,21 +2186,33 @@ class Peer
         ];
         
         $differences = [
-            'sessionTimers' => 'session-timers',
-            'sessionExpires' => 'session-expires',
-            'sessionRefresher' => 'session-refresher',
+            'sessionTimers'     => 'session-timers',
+            'sessionExpires'    => 'session-expires',
+            'sessionRefresher'  => 'session-refresher',
+            'sessionMinse'      => 'session-minse',
             't38ptUserTpSource' => 't38pt_usertpsource',
-            'callLimit' => 'call-limit'
+            'callLimit'         => 'call-limit'
         ];
 
-        foreach (get_object_vars($this) as $prop) {
-            if (in_array($ignore, $prop)) {
+        if (!empty($this->name)) {
+            $string .= "[{$this->name}]\n";
+        }
+
+        $objectVars = get_object_vars($this);
+        ksort($objectVars);
+
+        foreach ($objectVars as $prop => $value) {
+            if (in_array($prop, $ignore)) {
                 continue;
             }
             if (array_key_exists($prop, $differences)) {
-                $string .= $differences[$prop] . '=' . $this->$prop;
+                if (!empty($value)) {
+                    $string .= $differences[$prop] . '=' . $this->$prop . "\n";
+                }
             } else {
-                $string .= strtolower($prop) . '=' . $this->$prop;
+                if (!empty($value)) {
+                    $string .= strtolower($prop) . '=' . $this->$prop . "\n";
+                }
             }
         }
         
