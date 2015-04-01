@@ -2169,19 +2169,43 @@ class Peer
     public function toString()
     {
         $string = '';
-
+// TODO: ADD IGNORE ARRAY
+        
+        $ignore = [
+            'id',
+            'name',
+            'ipaddr',
+            'regseconds',
+            'fullcontact',
+            'lastms',
+            'usereqphone',
+            'trunkname',
+            'hasvoicemail',
+            'dynamic',
+            'path',
+            'supportpath',
+        ];
+        
         $differences = [
             'sessionTimers' => 'session-timers',
             'sessionExpires' => 'session-expires',
+            'sessionRefresher' => 'session-refresher',
+            't38ptUserTpSource' => 't38pt_usertpsource',
+            'callLimit' => 'call-limit'
         ];
 
-        foreach(get_object_vars($this) as $prop) {
-            if (arraY_key_exists($prop, $differences)) {
+        foreach (get_object_vars($this) as $prop) {
+            if (in_array($ignore, $prop)) {
+                continue;
+            }
+            if (array_key_exists($prop, $differences)) {
                 $string .= $differences[$prop] . '=' . $this->$prop;
             } else {
                 $string .= strtolower($prop) . '=' . $this->$prop;
             }
         }
+        
+        return $string;
     }
 
     public function __toString()
