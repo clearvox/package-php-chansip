@@ -46,12 +46,14 @@ class PeerFactoryTest extends PHPUnit_Framework_TestCase
 
         $firstExpectedPeer = new Peer();
         $firstExpectedPeer
+            ->setName('100')
             ->setType(Peer::TYPE_FRIEND)
             ->setDefaultUser('100')
             ->setSecret('secretPass');
 
         $secondExpectedPeer = new Peer();
         $secondExpectedPeer
+            ->setName('101')
             ->setType(Peer::TYPE_FRIEND)
             ->setDefaultUser('101')
             ->setSecret('password');
@@ -61,10 +63,12 @@ class PeerFactoryTest extends PHPUnit_Framework_TestCase
         $firstResponsePeer  = $responseArray[0];
         $secondResponsePeer = $responseArray[1];
 
+        $this->assertEquals($firstExpectedPeer->getName(), $firstResponsePeer->getName());
         $this->assertTrue($firstExpectedPeer->getType() === $firstResponsePeer->getType());
         $this->assertTrue($firstExpectedPeer->getDefaultUser() === $firstResponsePeer->getDefaultUser());
         $this->assertTrue($firstExpectedPeer->getSecret() === $firstResponsePeer->getSecret());
 
+        $this->assertEquals($secondExpectedPeer->getName(), $secondResponsePeer->getName());
         $this->assertTrue($secondExpectedPeer->getType() === $secondResponsePeer->getType());
         $this->assertTrue($secondExpectedPeer->getDefaultUser() === $secondResponsePeer->getDefaultUser());
         $this->assertTrue($secondExpectedPeer->getSecret() === $secondResponsePeer->getSecret());

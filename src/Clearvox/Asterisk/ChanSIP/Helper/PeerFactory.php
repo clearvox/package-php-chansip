@@ -405,7 +405,7 @@ class PeerFactory
 
             // Check if start of peer
             if(0 === strpos($line, '[')) {
-                $peerName = str_replace([''], ['[', ']'], $line);
+                $peerName = str_replace(['[', ']'], [''], $line);
                 $prepared[$peerName] = array();
             } elseif(false !== strpos($line, '=') && $peerName !== null) {
                 // Explode the line
