@@ -496,6 +496,11 @@ class Peer
     /**
      * @var string
      */
+    protected $subscribeContext;
+
+    /**
+     * @var string
+     */
     protected $vmExten;
 
     /**
@@ -1909,6 +1914,24 @@ class Peer
     public function getSubscribeMwi()
     {
         return $this->subscribeMwi;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubscribeContext()
+    {
+        return $this->subscribeContext;
+    }
+
+    /**
+     * @param string $subscribeContext
+     * @return Peer
+     */
+    public function setSubscribeContext($subscribeContext)
+    {
+        $this->subscribeContext = $subscribeContext;
+        return $this;
     }
 
     /**
