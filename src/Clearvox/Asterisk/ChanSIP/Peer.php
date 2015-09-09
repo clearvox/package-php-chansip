@@ -2242,6 +2242,258 @@ class Peer
     }
 
     /**
+     * @return mixed
+     */
+    public function getAvpf()
+    {
+        return $this->avpf;
+    }
+
+    /**
+     * @param mixed $avpf
+     * @return Peer
+     */
+    public function setAvpf($avpf)
+    {
+        $this->avpf = $avpf;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForceAvpf()
+    {
+        return $this->forceAvpf;
+    }
+
+    /**
+     * @param mixed $forceAvpf
+     * @return Peer
+     */
+    public function setForceAvpf($forceAvpf)
+    {
+        $this->forceAvpf = $forceAvpf;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEncryption()
+    {
+        return $this->encryption;
+    }
+
+    /**
+     * @param mixed $encryption
+     * @return Peer
+     */
+    public function setEncryption($encryption)
+    {
+        $this->encryption = $encryption;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIceSupport()
+    {
+        return $this->iceSupport;
+    }
+
+    /**
+     * @param mixed $iceSupport
+     * @return Peer
+     */
+    public function setIceSupport($iceSupport)
+    {
+        $this->iceSupport = $iceSupport;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsEnable()
+    {
+        return $this->dtlsEnable;
+    }
+
+    /**
+     * @param mixed $dtlsEnable
+     * @return Peer
+     */
+    public function setDtlsEnable($dtlsEnable)
+    {
+        $this->dtlsEnable = $dtlsEnable;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsVerify()
+    {
+        return $this->dtlsVerify;
+    }
+
+    /**
+     * @param mixed $dtlsVerify
+     * @return Peer
+     */
+    public function setDtlsVerify($dtlsVerify)
+    {
+        $this->dtlsVerify = $dtlsVerify;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsRekey()
+    {
+        return $this->dtlsRekey;
+    }
+
+    /**
+     * @param mixed $dtlsRekey
+     * @return Peer
+     */
+    public function setDtlsRekey($dtlsRekey)
+    {
+        $this->dtlsRekey = $dtlsRekey;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsCertFile()
+    {
+        return $this->dtlsCertFile;
+    }
+
+    /**
+     * @param mixed $dtlsCertFile
+     * @return Peer
+     */
+    public function setDtlsCertFile($dtlsCertFile)
+    {
+        $this->dtlsCertFile = $dtlsCertFile;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsPrivateKey()
+    {
+        return $this->dtlsPrivateKey;
+    }
+
+    /**
+     * @param mixed $dtlsPrivateKey
+     * @return Peer
+     */
+    public function setDtlsPrivateKey($dtlsPrivateKey)
+    {
+        $this->dtlsPrivateKey = $dtlsPrivateKey;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsCipher()
+    {
+        return $this->dtlsCipher;
+    }
+
+    /**
+     * @param mixed $dtlsCipher
+     * @return Peer
+     */
+    public function setDtlsCipher($dtlsCipher)
+    {
+        $this->dtlsCipher = $dtlsCipher;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsCaFile()
+    {
+        return $this->dtlsCaFile;
+    }
+
+    /**
+     * @param mixed $dtlsCaFile
+     * @return Peer
+     */
+    public function setDtlsCaFile($dtlsCaFile)
+    {
+        $this->dtlsCaFile = $dtlsCaFile;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsCaPath()
+    {
+        return $this->dtlsCaPath;
+    }
+
+    /**
+     * @param mixed $dtlsCaPath
+     * @return Peer
+     */
+    public function setDtlsCaPath($dtlsCaPath)
+    {
+        $this->dtlsCaPath = $dtlsCaPath;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsSetup()
+    {
+        return $this->dtlsSetup;
+    }
+
+    /**
+     * @param mixed $dtlsSetup
+     * @return Peer
+     */
+    public function setDtlsSetup($dtlsSetup)
+    {
+        $this->dtlsSetup = $dtlsSetup;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDtlsFingerprint()
+    {
+        return $this->dtlsFingerprint;
+    }
+
+    /**
+     * @param mixed $dtlsFingerprint
+     * @return Peer
+     */
+    public function setDtlsFingerprint($dtlsFingerprint)
+    {
+        $this->dtlsFingerprint = $dtlsFingerprint;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function toString()
@@ -2269,7 +2521,8 @@ class Peer
             'sessionRefresher'  => 'session-refresher',
             'sessionMinse'      => 'session-minse',
             't38ptUserTpSource' => 't38pt_usertpsource',
-            'callLimit'         => 'call-limit'
+            'callLimit'         => 'call-limit',
+            'forceAvp'          => 'force_avp',
         ];
 
         if (!empty($this->name)) {
