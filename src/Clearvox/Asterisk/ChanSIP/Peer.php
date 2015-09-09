@@ -566,6 +566,61 @@ class Peer
     const SUPPORT_PATH_YES = 'yes';
     const SUPPORT_PATH_NO  = 'no';
 
+    protected $avpf;
+
+    const AVPF_YES = 'yes';
+    const AVPF_NO  = 'no';
+
+    protected $forceAvpf;
+
+    const FORCE_AVP_YES = 'yes';
+    const FORCE_AVP_NO  = 'no';
+
+    protected $encryption;
+
+    const ENCRYPTION_YES = 'yes';
+    const ENCRYPTION_NO  = 'no';
+
+    protected $iceSupport;
+
+    const ICE_SUPPORT_YES = 'yes';
+    const ICE_SUPPORT_NO  = 'no';
+
+    protected $dtlsEnable;
+
+    const DTLS_ENABLE_YES = 'yes';
+    const DTLS_ENABLE_NO  = 'no';
+
+    protected $dtlsVerify;
+
+    const DTLS_VERIFY_YES = 'yes';
+    const DTLS_VERIFY_NO  = 'no';
+    const DTLS_VERIFY_FINGERPRINT = 'fingerprint';
+    const DTLS_VERIFY_CERTIFICATE = 'certificate';
+
+    protected $dtlsRekey;
+
+    protected $dtlsCertFile;
+
+    protected $dtlsPrivateKey;
+
+    protected $dtlsCipher;
+
+    protected $dtlsCaFile;
+
+    protected $dtlsCaPath;
+
+    protected $dtlsSetup;
+
+    const DTLS_SETUP_ACTIVE = 'active';
+    const DTLS_SETUP_PASSIVE = 'passive';
+    const DTLS_SETUP_ACTPASS = 'actpass';
+
+    protected $dtlsFingerprint;
+
+    const DTLS_FINGERPRINT_SHA1 = 'sha-1';
+    const DTLS_FINGERPRINT_SHA256 = 'sha-256';
+
     /**
      * @param string $accountCode
      * @return Peer
