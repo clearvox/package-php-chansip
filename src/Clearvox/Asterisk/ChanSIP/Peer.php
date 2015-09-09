@@ -571,7 +571,7 @@ class Peer
     const AVPF_YES = 'yes';
     const AVPF_NO  = 'no';
 
-    protected $forceAvpf;
+    protected $forceAvp;
 
     const FORCE_AVP_YES = 'yes';
     const FORCE_AVP_NO  = 'no';
@@ -2262,18 +2262,18 @@ class Peer
     /**
      * @return mixed
      */
-    public function getForceAvpf()
+    public function getForceAvp()
     {
-        return $this->forceAvpf;
+        return $this->forceAvp;
     }
 
     /**
      * @param mixed $forceAvpf
      * @return Peer
      */
-    public function setForceAvpf($forceAvpf)
+    public function setForceAvp($forceAvp)
     {
-        $this->forceAvpf = $forceAvpf;
+        $this->forceAvp = $forceAvp;
         return $this;
     }
 
