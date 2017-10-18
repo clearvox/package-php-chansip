@@ -255,6 +255,7 @@ class Peer
      */
     protected $videoSupport;
 
+    const VIDEO_SUPPORT_ALWAYS = 'always';
     const VIDEO_SUPPORT_YES = 'yes';
     const VIDEO_SUPPORT_NO  = 'no';
 
